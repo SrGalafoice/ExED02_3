@@ -68,7 +68,7 @@ public class Ex2<T> {
 
 
 
-    public void exibir() {
+    public void mostrarFila() {
         if (vazia()) {
             System.out.println("[]");
         } else {
