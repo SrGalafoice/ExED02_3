@@ -25,7 +25,7 @@ public class Ex2<T> {
 
 
 
-    public Object desenfileirar() {
+    public Object desenfileira() {
         if (vazia()) throw new IllegalStateException("Vetor vazio: enfileire algum elemento primeiro");
 
         Object primeiro = vetor[cabeca];
