@@ -8,13 +8,13 @@ public class MainEx2 {
 
         System.out.println("Lista cheia? " + Circular.cheia());
         System.out.println("Lista vazia? " + Circular.vazia());
-        Circular.exibir();
+        Circular.mostrarFila();
         
         Circular.enfileirar(1);
         Circular.enfileirar(2);
         Circular.enfileirar(3);
         Circular.enfileirar(4);
-        Circular.exibir();
+        Circular.mostrarFila();
         
         System.out.println("Cabeça =  " + Circular.cabeca());
         System.out.println("Cauda = " + Circular.cauda());
@@ -22,10 +22,10 @@ public class MainEx2 {
         System.out.println("Lista vazia? " + Circular.vazia());
         System.out.println("Tamanho da lista = " + Circular.tamanho());
 
-        System.out.println("Desenfileirarando... =  " + Circular.desenfileirar());
-        System.out.println("Desenfileirando... = " + Circular.desenfileirar());
+        System.out.println("Desenfileirarando... =  " + Circular.desenfileira());
+        System.out.println("Desenfileirando... = " + Circular.desenfileira());
+        Circular.mostrarFila();
 
-        Circular.exibir();
         System.out.println("Cabeça =  " + Circular.cabeca());
         System.out.println("Cauda = " + Circular.cauda());
         System.out.println("Lista cheia? " + Circular.cheia());
@@ -35,8 +35,8 @@ public class MainEx2 {
         Circular.enfileirar(6);
         Circular.enfileirar(7);
         Circular.enfileirar(8);
+        Circular.mostrarFila();
 
-        Circular.exibir();
         System.out.println("Cabeça =  " + Circular.cabeca());
         System.out.println("Cauda = " + Circular.cauda());
         System.out.println("Lista cheia? " + Circular.cheia());
