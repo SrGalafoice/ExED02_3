@@ -1,0 +1,50 @@
+package view;
+
+import controller.Ex2;
+
+public class MainEx2 {
+    public static void main(String[] args) {
+        Ex2<Integer> Circular = new Ex2<>(5);
+
+        System.out.println("Lista cheia? " + Circular.cheia());
+        System.out.println("Lista vazia? " + Circular.vazia());
+        Circular.exibir();
+        
+        Circular.enfileirar(1);
+        Circular.enfileirar(2);
+        Circular.enfileirar(3);
+        Circular.enfileirar(4);
+        Circular.exibir();
+        
+        System.out.println("Cabeça =  " + Circular.cabeca());
+        System.out.println("Cauda = " + Circular.cauda());
+        System.out.println("Lista cheia? " + Circular.cheia());
+        System.out.println("Lista vazia? " + Circular.vazia());
+        System.out.println("Tamanho da lista = " + Circular.tamanho());
+
+        System.out.println("Desenfileirarando... =  " + Circular.desenfileirar());
+        System.out.println("Desenfileirando... = " + Circular.desenfileirar());
+
+        Circular.exibir();
+        System.out.println("Cabeça =  " + Circular.cabeca());
+        System.out.println("Cauda = " + Circular.cauda());
+        System.out.println("Lista cheia? " + Circular.cheia());
+        System.out.println("Lista vazia? " + Circular.vazia());
+        System.out.println("Tamanho da lista circular: " + Circular.tamanho());
+
+        Circular.enfileirar(6);
+        Circular.enfileirar(7);
+        Circular.enfileirar(8);
+
+        Circular.exibir();
+        System.out.println("Cabeça =  " + Circular.cabeca());
+        System.out.println("Cauda = " + Circular.cauda());
+        System.out.println("Lista cheia? " + Circular.cheia());
+        System.out.println("Lista vazia? " + Circular.vazia());
+        System.out.println("Tamanho da lista = " + Circular.tamanho());
+
+        System.out.println("Elemento 1 está na fila? " + Circular.pesquisar(1));
+        System.out.println("Elemento 5 está na fila? " + Circular.pesquisar(7));
+        System.out.println("Tamanho da lista = " + Circular.tamanho());
+    }
+}
