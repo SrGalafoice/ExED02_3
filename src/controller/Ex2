@@ -1,0 +1,122 @@
+package controller;
+
+public class Ex2<T> {
+    private Object[] vetor;
+    private int cabeca, cauda;
+
+    public Ex2(int tamanho) {
+        vetor = new Object[tamanho];
+        cabeca = cauda = -1;
+    }
+
+    public Ex2() {
+        this(5);
+    }
+
+    public void enfileirar(Object novoElemento) {
+        if (cheia()) throw new IllegalStateException("Vetor cheio: desenfileire algum elemento primeiro");
+        cauda++;
+
+        if (cauda == vetor.length) cauda = 0;
+        if (cabeca == -1) cabeca = 0;
+
+        vetor[cauda] = novoElemento;
+    }
+
+
+
+    public Object desenfileirar() {
+        if (vazia()) throw new IllegalStateException("Vetor vazio: enfileire algum elemento primeiro");
+
+        Object primeiro = vetor[cabeca];
+        vetor[cabeca] = null;
+
+        if (cabeca == cauda){
+            cabeca = cauda = - 1;
+        }
+        else if (cabeca == vetor.length - 1){
+            cabeca = 0;
+        }
+        else cabeca++;
+
+        return primeiro;
+    }
+
+
+
+    public Object cabeca() {
+        return (vazia()) ? null : vetor[cabeca];
+    }
+
+
+
+    public Object cauda() {
+        return (cauda == -1) ? null : vetor[cauda];
+    }
+
+
+
+    public boolean vazia() {
+        return cabeca == -1;
+    }
+
+
+
+    public boolean cheia() {
+        return  (cabeca - 1 == cauda) || (cabeca == 0 && cauda == vetor.length - 1);
+    }
+
+
+
+    public void exibir() {
+        if (vazia()) {
+            System.out.println("[]");
+        } else {
+            StringBuilder builder = new StringBuilder("[");
+            for (int i = cabeca; ; i++) {
+                if (i == vetor.length){
+                    i = 0;
+                }
+                builder.append(vetor[i]);
+
+                if (i != cauda){
+                    builder.append(", ");
+                }
+                else break;
+            }
+            builder.append("]");
+
+            System.out.println(builder);
+        }
+    }
+
+
+
+    public boolean pesquisar(Object elemento) {
+        if (vazia()) return false;
+
+        for (int i = cabeca; ; i++) {
+            if (i == vetor.length){
+                i = 0;
+            }
+            if (vetor[i].equals(elemento)){
+                return true;
+            }
+            if (i == cauda){
+                break;
+            }
+        }
+        return vetor[cauda] == elemento;
+    }
+
+
+
+    public int tamanho() {
+        if (vazia()) return 0;
+
+        if (cabeca < cauda){
+            return (cauda - cabeca) + 1;
+        }
+        else return (vetor.length - cabeca) + (cauda + 1);
+    }
+}
